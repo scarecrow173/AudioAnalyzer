@@ -207,9 +207,9 @@ namespace MediaAnalyzer
                 MapArg += string.Format("{0:F1}-{1}{2}", 
                     input.index, 
                     AudioMetadata.ChannelIdToChannelStr(input.item.Key),
-                    input.index != inputFiles.Count ? "|" : "");
+                    input.index != inputFiles.Count - 1 ? "|" : "");
             }
-            JoinFilterArgs += string.Format("join=inputs={0}:channel_layout={1}:{2}[a]", 
+            JoinFilterArgs += string.Format("join=inputs={0}:channel_layout={1}:map={2}[a]", 
                 inputFiles.Count,
                 inputFiles.Count == 1 ? "mono" : AudioMetadata.ChannelLayoutToChannelLayoutStr(inputFiles.Keys.ToArray()),
                 MapArg);
