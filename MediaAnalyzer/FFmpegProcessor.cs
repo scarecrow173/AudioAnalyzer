@@ -195,7 +195,7 @@ namespace MediaAnalyzer
         }
 
         // mono*N to multichannel
-        public void ConvertAudioChannel(Dictionary<AudioMetadata.ChannelId, string> inputFiles, string outputFile)
+        public void ConvertAudioChannel(SortedDictionary<AudioMetadata.ChannelId, string> inputFiles, string outputFile)
         {
             string InputFileArgs = string.Empty;
             string JoinFilterArgs = string.Empty;
@@ -220,7 +220,7 @@ namespace MediaAnalyzer
             StartProcess(psi);
         }
 
-        public void ConvertAudioChannel(string inputFile, Dictionary<AudioMetadata.ChannelId, string> outputFiles)
+        public void ConvertAudioChannel(string inputFile, SortedDictionary<AudioMetadata.ChannelId, string> outputFiles)
         {
             string LayoutFilterArgs = string.Format("channel_layout={0}", outputFiles.Count == 1 ? "mono" : AudioMetadata.ChannelLayoutToChannelLayoutStr(outputFiles.Keys.ToArray()));
             string MapOptionArgs = string.Empty;

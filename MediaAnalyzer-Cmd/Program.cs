@@ -18,7 +18,7 @@ namespace MediaAnalyzer_Cmd
             {
                 fMPEG.ParseAudioMetadata(path);
             }
-            Dictionary<AudioMetadata.ChannelId, string> MonoFiles = new Dictionary<AudioMetadata.ChannelId, string>()
+            SortedDictionary<AudioMetadata.ChannelId, string> MonoFiles = new SortedDictionary<AudioMetadata.ChannelId, string>()
             {
                 { AudioMetadata.ChannelId.FL, Path.Combine(Directory.GetCurrentDirectory(), "front_left.wav") },
                 { AudioMetadata.ChannelId.FR, Path.Combine(Directory.GetCurrentDirectory(), "front_right.wav") },
@@ -29,7 +29,7 @@ namespace MediaAnalyzer_Cmd
             };
             fMPEG.ConvertAudioChannel(MonoFiles, "output_51.wav");
 
-            Dictionary<AudioMetadata.ChannelId, string> OutputFiles = new Dictionary<AudioMetadata.ChannelId, string>()
+            SortedDictionary<AudioMetadata.ChannelId, string> OutputFiles = new SortedDictionary<AudioMetadata.ChannelId, string>()
             {
                 { AudioMetadata.ChannelId.FL, Path.Combine(Directory.GetCurrentDirectory(), "output_front_left.wav") },
                 { AudioMetadata.ChannelId.FR, Path.Combine(Directory.GetCurrentDirectory(), "output_front_right.wav") },
